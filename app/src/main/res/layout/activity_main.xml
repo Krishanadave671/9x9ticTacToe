@@ -74,6 +74,7 @@
         android:text="Start Game"
         android:layout_margin="30dp"
         app:cornerRadius="18dp"
+        android:onClick="startGame"
         android:layout_gravity="center"/>
 
 </LinearLayout>
