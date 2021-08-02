@@ -190,7 +190,6 @@
             android:textSize="20sp"
             android:textStyle="bold"
             android:backgroundTint="@color/even"
-            android:textColor="@color/black"
             android:onClick="action" />
 
         <Button

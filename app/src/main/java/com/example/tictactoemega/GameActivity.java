@@ -85,21 +85,22 @@ public class GameActivity extends AppCompatActivity {
     }
 
     private void fillObjects(){
-        one = new Grid(grid1);
-        two = new Grid(grid2);
-        three = new Grid(grid3);
-        four = new Grid(grid4);
-        five = new Grid(grid5);
-        six = new Grid(grid6);
-        seven  = new Grid(grid7);
-        eight = new Grid(grid8);
-        nine = new Grid(grid9);
+        one = new Grid(grid1,1);
+        two = new Grid(grid2,2);
+        three = new Grid(grid3,3);
+        four = new Grid(grid4,4);
+        five = new Grid(grid5,5);
+        six = new Grid(grid6,6);
+        seven  = new Grid(grid7,7);
+        eight = new Grid(grid8,8);
+        nine = new Grid(grid9,9);
     }
 
     public void action(View view){
         String name = getResources().getResourceName(view.getId());
         int pos = Integer.parseInt(name.substring(name.length()-2,name.length()));
         Button press = findViewById(view.getId());
+        press.setClickable(false);
 
         if(count%2==0){
             press.setText("X");
