@@ -24,9 +24,24 @@ public class Grid {
         }
     }
 
+    public boolean isSolved(){
+
+        boolean flag = false;
+
+        for(int i=9;i<9;i+=3){
+            if(buttons[i].getText().toString() == buttons[i+1].getText().toString() &&
+                    buttons[i].getText().toString() == buttons[i+2].getText().toString() &&
+                    buttons[i].getText()=="X" || buttons[i].getText().toString()=="O"){
+        
+            }
+        }
+
+        return false;
+    }
+
     public void enable(){
         for(int i=0;i<9;i++){
-            if(buttons[i].getText().toString()!="X" || buttons[i].getText().toString()!="O"){
+            if(buttons[i].getText().toString()!="X" && buttons[i].getText().toString()!="O"){
                 if(type%2==0)
                     buttons[i].setBackgroundColor(Color.parseColor("#FFBD39"));
                 else

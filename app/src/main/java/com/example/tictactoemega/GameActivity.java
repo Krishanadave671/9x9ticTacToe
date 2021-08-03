@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class GameActivity extends AppCompatActivity {
 
     private Button[] grid1 = new Button[9];
@@ -20,7 +22,8 @@ public class GameActivity extends AppCompatActivity {
     private Button[] grid8 = new Button[9];
     private Button[] grid9 = new Button[9];
     private int count=0;
-    private Grid one,two,three,four,five,six,seven,eight,nine;
+    //private Grid one,two,three,four,five,six,seven,eight,nine;
+    ArrayList<Grid> matrix = new ArrayList<Grid>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,15 +88,15 @@ public class GameActivity extends AppCompatActivity {
     }
 
     private void fillObjects(){
-        one = new Grid(grid1,1);
-        two = new Grid(grid2,2);
-        three = new Grid(grid3,3);
-        four = new Grid(grid4,4);
-        five = new Grid(grid5,5);
-        six = new Grid(grid6,6);
-        seven  = new Grid(grid7,7);
-        eight = new Grid(grid8,8);
-        nine = new Grid(grid9,9);
+        matrix.add(0, new Grid(grid1,1));
+        matrix.add(1,new Grid(grid2,2));
+        matrix.add(2, new Grid(grid3, 3));
+        matrix.add(3, new Grid(grid4, 4));
+        matrix.add(4, new Grid(grid5, 5));
+        matrix.add(5, new Grid(grid6, 6));
+        matrix.add(6, new Grid(grid7, 7));
+        matrix.add(7, new Grid(grid8, 8));
+        matrix.add(8, new Grid(grid9, 9));
     }
 
     public void action(View view){
@@ -117,36 +120,13 @@ public class GameActivity extends AppCompatActivity {
     }
 
     private void stopAll(){
-        one.disableAll();
-        two.disableAll();
-        three.disableAll();
-        four.disableAll();
-        five.disableAll();
-        six.disableAll();
-        seven.disableAll();
-        eight.disableAll();
-        nine.disableAll();
+        for(int i=0;i<matrix.size();i++){
+            matrix.get(i).disableAll();
+        }
     }
 
     private void enableGrid(int gridNo){
-        if (gridNo==1)
-            one.enable();
-        else if (gridNo==2)
-            two.enable();
-        else if (gridNo==3)
-            three.enable();
-        else if (gridNo==4)
-            four.enable();
-        else if (gridNo==5)
-            five.enable();
-        else if (gridNo==6)
-            six.enable();
-        else if (gridNo==7)
-            seven.enable();
-        else if (gridNo==8)
-            eight.enable();
-        else if (gridNo==9)
-            nine.enable();
+        matrix.get(gridNo-1).enable();
     }
 
 

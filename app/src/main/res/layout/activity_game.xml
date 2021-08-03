@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Turn:"
-        android:textColor="#FFF338"
+        android:textColor="#DCD8E6"
         android:textSize="50sp"
         android:textStyle="bold" />
 
@@ -29,7 +29,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:backgroundTint="#00C853"
+        android:backgroundTint="#FFFFFF"
         android:text="Restart"
         android:textColor="@color/black"
         android:textSize="30sp" />
@@ -74,7 +74,6 @@
             android:textSize="20sp"
             android:textStyle="bold"
             android:backgroundTint="@color/even"
-            android:textColor="@color/black"
             android:onClick="action" />
 
         <Button
